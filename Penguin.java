@@ -29,7 +29,7 @@ public class Penguin extends Bird implements Swim {
     public void dive() {
         if (!this.swimming && this.depths == 0) {
             this.swimming = true;
-            System.out.printf("%s dives into the water.%n", this.getName());
+            System.out.printf(" dives into the water. ", this.getName());
         }
     }
 
@@ -42,7 +42,7 @@ public class Penguin extends Bird implements Swim {
     public int swimDown(int meters) {
         if (this.swimming) {
             this.depths = Math.min(this.depths + meters, 325);
-            System.out.printf("%s swims downward, depths : %d%n", this.getName(), this.depths);
+            System.out.printf(" swims downward, depths : ", this.getName(), this.depths);
         }
         return this.depths;
     }
@@ -56,7 +56,7 @@ public class Penguin extends Bird implements Swim {
     public int swimUp(int meters) {
         if (this.swimming) {
             this.depths = Math.max(this.depths - meters, 0);
-            System.out.printf("%s swims upward, depths : %d%n", this.getName(), this.depths);
+            System.out.printf(" swims upward, depths : ", this.getName(), this.depths);
         }
         return this.depths;
     }
@@ -67,9 +67,9 @@ public class Penguin extends Bird implements Swim {
     @Override
     public void getOut() {
         if (this.swimming && this.depths == 0) {
-            System.out.printf("%s gets out of the water.%n", this.getName());
+            System.out.printf(" gets out of the water. ", this.getName());
         } else {
-            System.out.printf("%s is too deep, it can't get out.%n", this.getName());
+            System.out.printf(" is too deep, it can't get out. ", this.getName());
         }
     }
 }
